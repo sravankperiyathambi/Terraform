@@ -1,5 +1,5 @@
 variable "env" {
-  description = "Name of the respetive environment"
+  description = "Name of the respective environment"
   default = ""
 }
 
