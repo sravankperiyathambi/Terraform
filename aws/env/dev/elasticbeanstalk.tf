@@ -8,12 +8,12 @@ resource "aws_s3_bucket" "beanstalk" {
 
 resource "aws_s3_bucket_object" "beanstalk" {
   bucket = "${aws_s3_bucket.beanstalk.id}"
-  key    = "beanstalk/web.zip"
-  source = "web.zip"
+  key    = "beanstalk/index.php"
+  source = "index.php"
 }
 
 module "elasticbeanstalk" {
-  source = "../../modules/elasticbeanstalk"
+  source = "Terraform/aws/modules/elasticbeanstalk"
   env = "dev"
   eb_app_name = "eb-app"
   eb_app_version_name = "eb-app-version"
