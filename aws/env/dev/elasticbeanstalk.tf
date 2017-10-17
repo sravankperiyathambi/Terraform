@@ -8,8 +8,8 @@ resource "aws_s3_bucket" "beanstalk" {
 
 resource "aws_s3_bucket_object" "beanstalk" {
   bucket = "${aws_s3_bucket.beanstalk.id}"
-  key    = "beanstalk/index.php"
-  source = "index.php"
+  key    = "beanstalk/web.zip"
+  source = "web.zip"
 }
 
 module "elasticbeanstalk" {
